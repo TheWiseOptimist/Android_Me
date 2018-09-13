@@ -66,7 +66,7 @@ public class BodyPartFragment extends Fragment {
         ImageView imageView = (ImageView) rootView.findViewById(R.id.body_part_image_view);
 
         // Set the image to the first in our list of head images
-        
+
         // TODO completed (3) If a list of image ids exists, set the image resource to the correct item in that list
         // Otherwise, create a Log statement that indicates that the list was not found
         if (mImageIds != null)
