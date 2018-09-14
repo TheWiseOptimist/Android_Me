@@ -19,9 +19,12 @@ public class MasterListFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_master_list, container, false);
+        View rootView =
+                inflater.inflate(R.layout.fragment_master_list, container, false);
 
         GridView gridView = rootView.findViewById(R.id.grid_view);
 

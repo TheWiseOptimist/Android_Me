@@ -10,5 +10,5 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity"
 
-    />
+    tools:layout="@layout/fragment_master_list" />
 
