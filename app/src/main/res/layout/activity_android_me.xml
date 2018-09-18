@@ -9,19 +9,11 @@
  See the License for the specific language governing permissions and
  limitations under the License.-->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.android_me.ui.AndroidMeActivity">
-
-    <!--<fragment-->
-
-        <!--android:id="@+id/all_body_parts_fragment"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-
-    <!--</fragment>-->
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.example.android.android_me.ui.AndroidMeActivity">-->
 
     <include
 
@@ -66,4 +58,4 @@
     <!--</LinearLayout>-->
 
 
-</ScrollView>
+<!--</ScrollView>-->

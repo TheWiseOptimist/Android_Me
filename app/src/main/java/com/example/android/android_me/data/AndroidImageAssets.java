@@ -1,22 +1,27 @@
 /*
-* Copyright (C) 2017 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*  	http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright (C) 2017 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  	http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package com.example.android.android_me.data;
 
+import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+
 import com.example.android.android_me.R;
+import com.example.android.android_me.ui.BodyPartFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,5 +101,43 @@ public class AndroidImageAssets {
     // Returns a list of all the images combined: heads, bodies, and legs in that order
     public static List<Integer> getAll() {
         return all;
+    }
+
+    public static void updateHeadFragment(int headIndex, FragmentManager fragmentManager) {
+        BodyPartFragment headFragment = new BodyPartFragment();
+        headFragment.setImageIds(getHeads());
+        headFragment.setListIndex(headIndex);
+        fragmentManager.beginTransaction()
+                .add(R.id.head_container, headFragment)
+                .commit();
+    }
+
+    public static void updateBodyFragment(int bodyIndex, FragmentManager fragmentManager) {
+        BodyPartFragment bodyFragment = new BodyPartFragment();
+        bodyFragment.setImageIds(getBodies());
+        bodyFragment.setListIndex(bodyIndex);
+        fragmentManager.beginTransaction()
+                .add(R.id.body_container, bodyFragment)
+                .commit();
+    }
+
+    public static void updateLegFragment(int legIndex, FragmentManager fragmentManager) {
+        BodyPartFragment legFragment = new BodyPartFragment();
+        legFragment.setImageIds(getLegs());
+        legFragment.setListIndex(legIndex);
+        fragmentManager.beginTransaction()
+                .add(R.id.leg_container, legFragment)
+                .commit();
+    }
+
+    public static void updateBPFragment(int index, FragmentManager fragmentManager,
+                                        List<Integer> imageIds, int container) {
+        BodyPartFragment bodyPartFragment = new BodyPartFragment();
+        bodyPartFragment.setImageIds(imageIds);
+        bodyPartFragment.setListIndex(index);
+        fragmentManager.beginTransaction()
+                .add(container, bodyPartFragment)
+                .commit();
+
     }
 }
