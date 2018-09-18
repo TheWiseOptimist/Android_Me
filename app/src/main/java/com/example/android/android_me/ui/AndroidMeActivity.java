@@ -16,7 +16,6 @@
 
 package com.example.android.android_me.ui;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,18 +23,11 @@ import android.os.Bundle;
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
 
-import static com.example.android.android_me.data.AndroidImageAssets.updateBodyFragment;
-import static com.example.android.android_me.data.AndroidImageAssets.updateHeadFragment;
-import static com.example.android.android_me.data.AndroidImageAssets.updateLegFragment;
+import static com.example.android.android_me.data.AndroidImageAssets.updateBPFragment;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
-
-    // Variables to store the values for the list index of the selected images
-    // The default value will be index = 0
-    private int headIndex;
-    private int bodyIndex;
-    private int legIndex;
+    int headIndex, bodyIndex, legIndex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,34 +35,26 @@ public class AndroidMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_android_me);
 
         // Only create new fragments when there is no previously saved state
-        createNewBodyPartFragments(savedInstanceState);
-
-    }
-
-    private void createNewBodyPartFragments(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
 
             // Retrieve list index values that were sent through an intent; use them to display the desired Android-Me body part image
             // Use setListindex(int index) to set the list index for all BodyPartFragments
-
-            FragmentManager fragmentManager = getSupportFragmentManager();
             // Create a new head BodyPartFragment
             // Set the list of image id's for the head fragment and set the position to the second image in the list
             // Get the correct index to access in the array of head images from the intent
             // Set the default value to 0
             // Add the fragment to its container using a FragmentManager and a Transaction
-            int headIndex = getIntent().getIntExtra("headIndex", 0);
-            updateHeadFragment(headIndex, fragmentManager);
+            headIndex = getIntent().getIntExtra("headIndex", 0);
+            updateBPFragment(headIndex, fragmentManager, 0);
 
             // Create and display the body and leg BodyPartFragments
-            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
-            updateBodyFragment(bodyIndex,fragmentManager);
+            bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+            updateBPFragment(bodyIndex, fragmentManager, 1);
 
-            int legIndex = getIntent().getIntExtra("legIndex", 0);
-            updateLegFragment(legIndex,fragmentManager);
-
+            legIndex = getIntent().getIntExtra("legIndex", 0);
+            updateBPFragment(legIndex, fragmentManager, 2);
         }
     }
-
-
 }
