@@ -103,33 +103,6 @@ public class AndroidImageAssets {
         return all;
     }
 
-//    public static void updateHeadFragment(int headIndex, FragmentManager fragmentManager) {
-//        BodyPartFragment headFragment = new BodyPartFragment();
-//        headFragment.setImageIds(getHeads());
-//        headFragment.setListIndex(headIndex);
-//        fragmentManager.beginTransaction()
-//                .add(R.id.head_container, headFragment)
-//                .commit();
-//    }
-//
-//    public static void updateBodyFragment(int bodyIndex, FragmentManager fragmentManager) {
-//        BodyPartFragment bodyFragment = new BodyPartFragment();
-//        bodyFragment.setImageIds(getBodies());
-//        bodyFragment.setListIndex(bodyIndex);
-//        fragmentManager.beginTransaction()
-//                .add(R.id.body_container, bodyFragment)
-//                .commit();
-//    }
-//
-//    public static void updateLegFragment(int legIndex, FragmentManager fragmentManager) {
-//        BodyPartFragment legFragment = new BodyPartFragment();
-//        legFragment.setImageIds(getLegs());
-//        legFragment.setListIndex(legIndex);
-//        fragmentManager.beginTransaction()
-//                .add(R.id.leg_container, legFragment)
-//                .commit();
-//    }
-
     public static void updateBPFragment(int index, FragmentManager fragmentManager,
                                         int bodyPartNumber) {
         BodyPartFragment bodyPartFragment = new BodyPartFragment();
