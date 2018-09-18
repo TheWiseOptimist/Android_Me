@@ -47,7 +47,6 @@ public class BodyPartFragment extends Fragment {
      */
     public BodyPartFragment() {
     }
-
     /**
      * Inflates the fragment layout file and sets the correct resource for the image to display
      */

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
     // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI
     // A single-pane display refers to phone screens, and two-pane to larger tablet screens
-    private boolean isTablet = isTablet();
+//    private boolean isTablet = isTablet();
     private Button nextButton;
     private float smallestWidth;
 
@@ -49,31 +49,30 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
         // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image
         // Also, for the two-pane display, get rid of the "Next" button in the master list fragment
-        getSmallestWidth();
+//        getSmallestWidth();
 
         nextButton = findViewById(R.id.next_button);
-        if (isTablet()) {
-            nextButton.setVisibility(View.GONE);
-        } else nextButton.setVisibility(View.VISIBLE);
-
-
-        Toast.makeText(this, "sw" + smallestWidth, Toast.LENGTH_LONG).show();
+//        if (isTablet()) {
+//            nextButton.setVisibility(View.GONE);
+//        } else nextButton.setVisibility(View.VISIBLE);
+//
+//        Toast.makeText(this, "sw" + smallestWidth, Toast.LENGTH_LONG).show();
     }
+//
+//    private boolean isTablet() {
+//        return smallestWidth >= 600;
+//    }
 
-    private boolean isTablet() {
-        return smallestWidth >= 600;
-    }
-
-    private void getSmallestWidth() {
-        DisplayMetrics metrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int widthPixels = metrics.widthPixels;
-        int heightPixels = metrics.heightPixels;
-        float scaleFactor = metrics.density;
-        float widthDp = widthPixels / scaleFactor;
-        float heightDp = heightPixels / scaleFactor;
-        smallestWidth = Math.min(widthDp, heightDp);
-    }
+//    private void getSmallestWidth() {
+//        DisplayMetrics metrics = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+//        int widthPixels = metrics.widthPixels;
+//        int heightPixels = metrics.heightPixels;
+//        float scaleFactor = metrics.density;
+//        float widthDp = widthPixels / scaleFactor;
+//        float heightDp = heightPixels / scaleFactor;
+//        smallestWidth = Math.min(widthDp, heightDp);
+//    }
 
     // Define the behavior for onImageSelected
     public void onImageSelected(int position) {
@@ -128,8 +127,8 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 startActivity(intent);
             }
         });
-        if (isTablet()) nextButton.setVisibility(View.GONE);
-        else nextButton.setVisibility(View.VISIBLE);
+//        if (isTablet()) nextButton.setVisibility(View.GONE);
+//        else nextButton.setVisibility(View.VISIBLE);
 
     }
 

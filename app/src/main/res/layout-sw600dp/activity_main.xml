@@ -35,12 +35,7 @@ This means creating a new layout folder for tablet screens and another activity_
     with the MasterListFragment on the left of the screen
     and three vertically arranged FrameLayout containers
     for the dynamic BodyPartFragments on the right side -->
-    <fragment
-        android:id="@+id/body_part_fragment"
-        android:name="com.example.android.android_me.ui.BodyPartFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_body_part" />
+
+    <include layout="@layout/all_body_parts" />
 
 </LinearLayout>
